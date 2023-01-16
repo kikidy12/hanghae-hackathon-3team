@@ -19,7 +19,12 @@
     <script>
         function save_datgul() {
             let contents = $('#datgul_contents').val()
+            if(contents ==''){
+                alert("내용을 입력해주세요")
+            }
+            else{
             alert(contents)
+            }
             window.location.reload()
         }
         function like(){
