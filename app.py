@@ -66,8 +66,8 @@ def apiRegister():
 
 @app.route('/api/login', methods = ['POST'])
 def apiLogin():
-    idReceive = request.form['id_give']
-    pwReceive = request.form['pw_give']
+    idReceive = request.form['idGive']
+    pwReceive = request.form['pwGive']
 
     # 회원가입 때와 같은 방법으로 pw를 암호화합니다.
     pwHash = hashlib.sha256(pwReceive.encode('utf-8')).hexdigest()
