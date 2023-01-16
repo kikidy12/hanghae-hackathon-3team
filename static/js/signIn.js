@@ -1,9 +1,8 @@
 function login(){
 
-let a = $('#userID').val();
-        console.log(a);
+
         let id =  $('#userID').val()
-        let pw =  $('#userID').val()
+        let pw =  $('#userPW').val()
 
     $.ajax({
                 type: "POST",
