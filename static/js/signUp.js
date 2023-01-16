@@ -71,6 +71,7 @@ pwShowHide.forEach(eyeIcon => {
 })
 
 function signup(){
+    console.log('dd')
    let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
    let checK_idpw = /^[a-zA-z0-9]{4,10}$/;
 
