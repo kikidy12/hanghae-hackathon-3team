@@ -52,7 +52,7 @@
 						/>
 						<label>저자</label>
 					</div>
-                    <div class="form-floating mb-3">
+					<div class="form-floating mb-3">
 						<input
 							id="publisher"
 							type=""
@@ -103,19 +103,21 @@
 						<!-- 로그인 로그아웃 -->
 
 						<div>
-							<nav onclick="">로그인 하러가기</nav>
-							<nav onclick="">로그아웃</nav>
+							<nav onclick="location.href='/login'">로그인 하러가기</nav>
+							<nav onclick="location.href='/register'">로그아웃</nav>
 						</div>
 					</div>
 				</header>
 				<div class="main-img">
 					<h1>IT-Check 어때</h1>
-					<button onclick="modalShow()" id="addPost" class="back">책 등록하기</button>
+					<button onclick="modalShow()" id="addPost" class="back">
+						책 등록하기
+					</button>
 				</div>
 			</div>
 			<div class="Top3book w100">
-                <div class="row row-cols-1 row-cols-md-4 g-3" id="cards-box2"></div>
-            </div>
+				<div class="row row-cols-1 row-cols-md-4 g-3" id="cards-box2"></div>
+			</div>
 			<div class="Top3book">
 				<div class="row row-cols-1 row-cols-md-4 g-3" id="cards-box"></div>
 			</div>
