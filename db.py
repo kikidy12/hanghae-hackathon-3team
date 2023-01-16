@@ -1,5 +1,7 @@
 from pymongo import MongoClient
+import certifi
 
-client = MongoClient(
-        "mongodb+srv://test:sparta@cluster0.zphghpj.mongodb.net/?retryWrites=true&w=majority")
-db = client.recommendbook
+ca = certifi.where()
+client = MongoClient('mongodb+srv://test:sparta@cluster0.2caednd.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
+db = client.dbsparta
+
