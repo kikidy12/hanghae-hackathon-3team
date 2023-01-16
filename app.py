@@ -17,7 +17,6 @@ import datetime
 # 그렇지 않으면, 개발자(=나)가 회원들의 비밀번호를 볼 수 있으니까요.^^;
 import hashlib
 
-
 app = Flask(__name__)
 
 
@@ -36,6 +35,7 @@ def apiBookList():
 def register():
     return render_template('signUp.html')
 
+
 @app.route('/login')
 def logIn():
     return render_template('signIn.html')
@@ -46,22 +46,23 @@ def apiRegister():
     idReceive = request.form['idGive']
     pwReceive = request.form['pwGive']
     nickNameReceive = request.form['nickNameGive']
-    userList = list(db.user.find({}, {'_id':False}))
+    userList = list(db.user.find({}, {'_id': False}))
     userNum = len(userList) + 1
 
-    pwHash= hashlib.sha256(pwReceive.encode('utf-8')).hexdigest()
+    pwHash = hashlib.sha256(pwReceive.encode('utf-8')).hexdigest()
 
     doc = {
-        'userNumber':userNum,
-        'userId':idReceive,
-        'userNickName':nickNameReceive,
-        'userPassword':pwHash
+        'userNumber': userNum,
+        'userId': idReceive,
+        'userNickName': nickNameReceive,
+        'userPassword': pwHash
     }
 
     db.user.insert_one(doc)
-    return jsonify({'result':'success'})
+    return jsonify({'result': 'success'})
 
-@app.route('/api/login', methods = ['POST'])
+
+@app.route('/api/login', methods=['POST'])
 def apiLogin():
     idReceive = request.form['id_give']
     pwReceive = request.form['pw_give']
@@ -90,11 +91,12 @@ def apiLogin():
     else:
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
 
+
 # [유저 정보 확인 API]
 # 로그인된 유저만 call 할 수 있는 API입니다.
 # 유효한 토큰을 줘야 올바른 결과를 얻어갈 수 있습니다.
 # (그렇지 않으면 남의 장바구니라든가, 정보를 누구나 볼 수 있겠죠?)
-@app.route('/api/valid', methods = ['GET'])
+@app.route('/api/valid', methods=['GET'])
 def apiValid():
     tokenReceive = request.cookies.get('mytoken')
 
@@ -116,6 +118,7 @@ def apiValid():
     #     return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})
     except jwt.exceptions.DecodeError:
         return jsonify({'result': 'fail', 'msg': '로그인 정보가 존재하지 않습니다.'})
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5500, debug=True)
