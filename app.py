@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, session, redirect, url_for
-from user import *
 from bookManage import *
 from book import *
 from comment import *
@@ -98,6 +97,7 @@ def apiLogin():
 # 로그인된 유저만 call 할 수 있는 API입니다.
 # 유효한 토큰을 줘야 올바른 결과를 얻어갈 수 있습니다.
 # (그렇지 않으면 남의 장바구니라든가, 정보를 누구나 볼 수 있겠죠?)
+@app.route('/api/valid', methods = ['GET'])
 def apiValid():
     tokenReceive = request.cookies.get('mytoken')
 
