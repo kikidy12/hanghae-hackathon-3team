@@ -37,55 +37,30 @@ function setTopBannerBookList(bookListData) {
 		}
 	});
 
-	let firstBook = bookList[0];
-
-	let summary = firstBook["bookSummary"].substring(0, 20) + "...";
-
-	let temp_next_html = `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>`;
-
-	let temp_html = `
-						<div class="carousel-item active" data-bs-interval="10000">
-						<button style="width: 52%" onclick="bookopne()">
-									<div class="cardimage" style="padding: 145% 0 0 0; background-image: url(${firstBook["bookThumbnail"]}); background-size: cover; background-position: 50% 50%;" class = "cardimage">
-									</div>
-									<div class="carousel-caption d-none d-md-block">
-										<div class= "cardtext" >
-											<h5>${firstBook["bookTitle"]}</h5>
-											<p>${summary}</p>
-										</div>
-									</div>
-								</button>
-						</div>`;
-
-	$("#topCardIndexButton").append(temp_next_html);
-	$("#topCardItem").append(temp_html);
-
-	for (let i = 1; i < 4; i++) {
+	for (let i = 0; i < 4; i++) {
 		let book = bookList[i];
 
-		let summary = book["bookSummary"].substring(0, 20) + "...";
+		let temp_html = `<div class="col p03">
+											<div class="card h-100">
+													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="bookopne()">
+															<div style="background-image: url(${book["bookThumbnail"]});
+															background-size: 102%;
+															background-position: 50% 50%;
+															width: 100%;
+															padding: 145% 0 0 0;
+															border-radius: 16px 2px 2px 2px;"
+																	class="card-img-top"></div>
+															<div class="card-body">
+																	<h5 class="card-title">${book["bookTitle"]}</h5>
+																	<div style="text-align: right";>
+																			<p class="card-text">
+																					좋아요 : ${book["likeCount"]}</p>
+																	</div>
+															</div>
+													</button>
+											</div>`;
 
-		let temp_next_html = `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="${i}"
-                aria-label="Slide ${i + 1}"></button>`;
-
-		let temp_html = `
-							<div class="carousel-item" data-bs-interval="10000">
-								<button style="width: 52%" onclick="bookopne()">
-									<div class="cardimage" style="padding: 145% 0 0 0; background-image: url(${book["bookThumbnail"]}); background-size: cover; background-position: 50% 50%;" class = "cardimage">
-									</div>
-									<div class="carousel-caption d-none d-md-block">
-										<div class= "cardtext" >
-											<h5>${book["bookTitle"]}</h5>
-											<p>${summary}</p>
-										</div>
-									</div>
-								</button>
-							</div>
-						`;
-
-		$("#topCardIndexButton").append(temp_next_html);
-		$("#topCardItem").append(temp_html);
+		$("#cards-box2").append(temp_html);
 	}
 }
 
@@ -125,7 +100,7 @@ function getBookList() {
 		url: "/api/book/list",
 		data: {},
 		success: function (response) {
-			// setTopBannerBookList(response["bookList"]);
+			setTopBannerBookList(response["bookList"]);
 			setBookList(response["bookList"]);
 		},
 	});
