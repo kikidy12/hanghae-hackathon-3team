@@ -71,15 +71,21 @@ pwShowHide.forEach(eyeIcon => {
 })
 
 function signup(){
-    console.log('dd')
-   let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
-   let checK_idpw = /^[a-zA-z0-9]{4,10}$/;
 
-    // 조건 닉네임 한글만 아이디 영문숫자 4-8글자
-    let ninkName = ninkname.val()
+        let ninkName = ninkname.val()
     let id = ID.val()
     let pw = PW.val()
     let check = userPWcheck.val()
+let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
+   let checK_idpw = /^[a-zA-z0-9]{4,10}$/;
+
+
+    // 닉네임은 한글만 아이디와 비밀번호는
+    if(check_kor.test(ninkName)  && checK_idpw.test(id)   &&checK_idpw.test(pw)   && check === pw){
+
+
+    // 조건 닉네임 한글만 아이디 영문숫자 4-8글자
+
 
      $.ajax({
                 type: "POST",
@@ -102,11 +108,6 @@ function signup(){
             })
 
 
-    // 닉네임은 한글만 아이디와 비밀번호는
-    if(check_kor.test(ninkName)  && checK_idpw.test(id)   &&checK_idpw.test(pw)   && check === pw){
-
-
-
 
     }
     //
@@ -114,6 +115,9 @@ function signup(){
        $(".show3").addClass('show');
     }else if(check !== pw) {
         $(".show4").addClass('show');
+    }else {
+        alert('오류 다시 시도 하세요!');
+        window.location.reload();
     }
     // else if(id_duplicate_check !==true){
     //     alert('아이디 중복체크 하시고 회원가입해주세요!')
