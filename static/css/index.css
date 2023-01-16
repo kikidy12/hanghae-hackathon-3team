@@ -262,6 +262,17 @@ body {
     background-color: #663399;
 }
 
+.Top3book.w100 .p03:hover button.testBton {
+    background-color: #4b5660;
+    box-shadow: 0px 5px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.Top3book.w100 .p03:hover button.testBton h5 {
+    color: #ffffff;
+}
+.Top3book.w100 .p03:hover button.testBton div p{
+    color: #ffffff;
+}
+
 .p03:hover {
     margin-top: 11px;
 }
@@ -319,7 +330,11 @@ body {
     height: 50px;
     background: url(../image/icon_hot.png);
     background-size: 100%;
+    transition: 0.3s;
     content: "";
+}
+.Top3book.w100 .p03:hover::after{
+    margin-top: -413px;
 }
 
 
