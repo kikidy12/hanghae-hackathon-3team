@@ -79,7 +79,7 @@ function setBookList(bookListData) {
 											<div class="card h-100">
 													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="bookopne()">
 															<div style="background-image: url(${book["bookThumbnail"]});
-															background-size: cover;
+															background-size: 102%;
 															background-position: 50% 50%;
 															width: 100%;
 															padding: 145% 0 0 0;
