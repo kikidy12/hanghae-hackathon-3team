@@ -53,7 +53,7 @@ body .app {
 .app header {
     width: 100%;
     height: 100px;
-    background: #eee;
+    background: #fff;
 
 }
 
@@ -86,29 +86,34 @@ body .app {
     width: 100%;
     height: 300px;
 
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/736x/ef/95/6b/ef956b09736e38ac9f885808ec2fdb89.jpg');
-    background-position: center;
-    background-size: cover;
+    background-image: url('../image/banner_main.jpg');
+    background-position: 50% 65%;
+    background-size: 75%;
 
-    color: white;
+    color: rgb(54 54 54);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+}
+.main-img h1{
+    font-family: 'NanumSquareNeoHeavy';
+    margin-top: 60px;
 }
 
-.main-img button {
+.main-img button{
     width: 200px;
     height: 50px;
 
-    background-color: transparent;
-    color: white;
-
     border-radius: 50px;
-    border: 1px solid white;
+    border: 3px solid rgb(54 54 54);
 
-    margin-top: 10px;
+    margin-top: 7px;
+    font-family: 'NanumSquareNeoExtraBold';
+    color: rgb(54 54 54);
 }
 
 .main-img button:hover {
@@ -275,3 +280,44 @@ body {
     border: 0;
 }
 
+#cards-box{
+    margin-top: 10px;
+}
+
+.Top3book.w100{
+    width: 100%;
+    background-color: #663399;
+    max-width:100%;
+    padding-left: calc(50% - 420px);
+    padding-right: calc(50% - 420px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 40%);
+    margin-top: 20px;
+}
+
+.Top3book.w100 .h-100{
+    background-color: #663399;
+}
+.Top3book.w100 .testBton{
+    background-color: #eaeaea;
+}
+.Top3book.w100 .card-title{
+    color: #4b5660;
+}
+.Top3book.w100 .p03 p {
+    font-size: 15px;
+    color: #4b5660;
+}
+
+
+@media screen and (max-width:1070px) {
+
+.Top3book.w100{
+    width: 100%;
+    background-color: #4b5660;
+    max-width:100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+}
