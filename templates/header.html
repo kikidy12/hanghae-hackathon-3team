@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* 모달창  */
+    .modal-side {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        padding: 30px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .modal-in {
+        width: 50%;
+        height: 70%;
+        background: white;
+        border-radius: 5px;
+        padding: 30px;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .modal-main {
+        width: 100%;
+        height: 100%;
+
+        padding-top: 20px;
+    }
+
+
+    .show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    body .app {
+        width: 100%;
+
+
+    }
+
+    .app header {
+        width: 100%;
+        height: 100px;
+        background: #eee;
+
+    }
+
+    .header-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around
+    }
+
+    .header-list div {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-list div nav {
+        margin-top: 30px;
+
+        background: #2c3e50;
+        color: white;
+        padding: 0 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 15px;
+        border-radius: 20px;
+
+    }
+
+
+    .main-img {
+        width: 100%;
+        height: 300px;
+
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/736x/ef/95/6b/ef956b09736e38ac9f885808ec2fdb89.jpg');
+        background-position: center;
+        background-size: cover;
+
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-img button {
+        width: 200px;
+        height: 50px;
+
+        background-color: transparent;
+        color: white;
+
+        border-radius: 50px;
+        border: 1px solid white;
+
+        margin-top: 10px;
+    }
+
+    .main-img button:hover {
+        border: 2px solid white;
+    }
+
+    .addbooklist {
+        width: 200px;
+        height: 50px;
+
+
+        background: #2c3e50;
+        ;
+        color: white;
+        border-radius: 50px;
+        border: 1px solid white;
+
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .addbooklist:hover {
+        box-shadow: 0 14px 28px rgba(63, 67, 179, 0.25), 0 10px 10px rgba(97, 111, 191, 0.22);
+    }
+</style>
+
+<body>
+    <div class="modal-side show">
+        <div class="modal-in">
+
+            <h2>📚 읽어본 책 등록하기</h2>
+            <div class="modal-main">
+                <div class="form-floating mb-3">
+                    <input id="booktitle" type="text" class="form-control" placeholder="name@example.com">
+                    <label>책제목</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input id="author" type="" class="form-control" placeholder="name@example.com">
+                    <label>저자</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input id="bookinfo" type="email" class="form-control" placeholder="name@example.com">
+                    <label>간단한소개</label>
+                </div>
+
+                <button class="addbooklist">등록하기.. !</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="app">
+        <header>
+            <div class="header-list">
+                <!-- 글등록, -->
+                <div>
+                    <nav onclick="">글등록하기!!</nav>
+                    <nav>dd</nav>
+                </div>
+
+                <!-- 로그인 로그아웃 -->
+                <!-- <div>
+                    <span class="main-text">IT책어때용!</span>
+                </div> -->
+                <!-- 로그인 로그아웃 -->
+
+                <div>
+
+                    <nav onclick="">로그인 하러가기</nav>
+                    <nav onclick="">로그아웃</nav>
+                </div>
+
+            </div>
+        </header>
+        <div class="main-img">
+            <h1>서재 등록하기 ! </h1>
+            <button id="addPost">글등록하기!!</button>
+        </div>
+    </div>
+
+    <script>
+        let modalSide = document.querySelector('.modal-side');
+        let addPost = document.getElementById('addPost');
+        addPost.addEventListener('click', function () {
+            modalSide.classList.add('show')
+        })
+        window.addEventListener('click', (e) => {
+            if (e.target == modalSide) {
+                console.log('맞아요')
+                modalSide.classList.remove('show')
+            }
+            console.log(e.target)
+            length
+        })
+
+        let addbooklist = document.querySelector('.addbooklist')
+        addbooklist.addEventListener('click', function () {
+            if ($("#booktitle").val().length >= 2 && $("#author").val().length >= 2 && $("#bookinfo").val().length >= 2) {
+                // 데이터 전송 하기 
+                alert('이제 여기서 데이터 DB에 저장하기')
+            } else {
+                alert('다시하셈')
+            }
+        })
+    </script>
+</body>
+
+</html>
