@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, session, redirect, url_for
+from flask import Flask, request, render_template, jsonify, session, redirect, url_for
 from user import *
 from bookManage import *
 from book import getBook, getBookList

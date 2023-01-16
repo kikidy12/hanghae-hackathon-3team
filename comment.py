@@ -1,5 +1,6 @@
 from db import db
 from flask import jsonify, request
+from util import checkToken
 
 
 # 댓글 목록 조회
@@ -12,7 +13,12 @@ def getCommentList():
 
 # 댓글 등록
 def addComment():
-  userId = int(request.form['uesrId']);
+  user = checkToken()
+
+  if user is None:
+    return jsonify({'result': 'fail', 'message': '토큰 오류'})
+
+  userId = int(user[id]);
   bookId = int(request.form['bookId']);
   comment = request.form['comment'];
 
@@ -24,7 +30,8 @@ def addComment():
 
   comment = db.comment.insert_one({'id': lastId + 1, 'userId': userId, 'bookId': bookId, 'comment': comment, 'isSub': False })
 
-  return jsonify({'message':'등록완료'})
+  return jsonify({'result': 'success', 'message': '등록완료'})
+
 
 
 # 대댓글 등록
