@@ -18,7 +18,7 @@ def addComment():
   if user is None:
     return jsonify({'result': 'fail', 'message': '토큰 오류'})
 
-  userId = int(user[id]);
+  userId = int(user['userNumber']);
   bookId = int(request.form['bookId']);
   comment = request.form['comment'];
 
