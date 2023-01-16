@@ -13,11 +13,6 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/api/book')
-def apiBookList():
-  test = getBookList()
-  return test
-
 @app.route('/register')
 def register():
     return render_template('signUp.html')
@@ -26,33 +21,33 @@ def register():
 def logIn():
     return render_template('signIn.html')
 
-@app.route('/api/bookRegister', methods=["POST"])
+@app.route('/api/book/register', methods=["POST"])
 def apiBookPOST():
   testBook = registerBook()
   return testBook
 
-@app.route('/api/bookModify', methods=["POST"])
+@app.route('/api/book/modify', methods=["POST"])
 def apiModifyBookPOST():
   testBook = modifyBook()
   return testBook
 
 # api
-@app.route('/api/bookDetail')
+@app.route('/api/book/detail')
 def apiGetBook():
   json = getBook()
   return json
 
-@app.route('/api/bookLikePlus', methods=["POST"])
+@app.route('/api/book/like/plus', methods=["POST"])
 def apiPostBookLikePlus():
   message = addBookLikePlus()
   return message
 
-@app.route('/api/bookList')
+@app.route('/api/book/list')
 def apiGetBookList():
   json = getBookList()
   return json
 
-@app.route('/api/commentList', methods=["GET"])
+@app.route('/api/comment/list', methods=["GET"])
 def apiGetCommentList():
   json = getCommentList()
   return json
@@ -64,7 +59,7 @@ def apiPostComment():
   return message
 
 
-@app.route('/api/subComment', methods=["POST"])
+@app.route('/api/omment/sub', methods=["POST"])
 def apiPostSubComment():
   message = addSubComment()
   return message
