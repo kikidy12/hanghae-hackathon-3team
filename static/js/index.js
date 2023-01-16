@@ -65,7 +65,11 @@ function setTopBannerBookList(bookListData) {
 }
 
 function setBookList(bookListData) {
-	let bookList = bookListData;
+	let bookList = bookListData.sort(function (a, b) {
+		if (a.hasOwnProperty("id")) {
+			return b.id - a.id;
+		}
+	});
 
 	for (let i = 0; i < bookList.length; i++) {
 		let book = bookList[i];
