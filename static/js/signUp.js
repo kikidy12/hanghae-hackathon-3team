@@ -1,19 +1,46 @@
-
+let id_duplicate_check = false;
+let nink_duplicate_check = false;
 
 let ninkname = $("#userNinkName");
 let ID = $("#userID");
 let PW = $("#userPW");
-let userPWcheck = $("#userPWcheck")
+let userPWcheck = $("#userPWcheck");
 
 // 닉네임 input 창
 ninkname.on('input', function (){
-    if(ninkname.val().length >=2){
-        $(".check1").css('opacity', '1')
-    // 닉네임 2글자 이상이고
-    //  중복체크 하기 버튼넣고 맞으면
-        $(".check1").on('click', function (){
 
-        })
+    if(ninkname.val().length >=2){
+
+         $('.check1').css('opacity','1')
+
+     $(".check1").on('click', function (){
+             let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
+             let nink1 = ninkname.val()
+             if(check_kor.test(nink1) ){
+               $.ajax({
+               type: "POST",
+               url: "/ninkcheck",
+               data: { nickNameGive:  ninkname.val()},
+               success: function (response) {
+                   console.log(response)
+
+               console.log(response['msg'])
+               $('.check1').css('background','#fa5252')
+               $('.check1').text(response["msg"])
+
+               nink_duplicate_check = response["nink_duplicate_check"]
+               console.log(nink_duplicate_check)
+                     }
+                 })
+
+             }
+             else {
+                $(".show1").addClass('show');
+                window.location.reload()
+             }
+
+
+ })
 
 
 
@@ -30,6 +57,41 @@ ninkname.on('input', function (){
 ID.on('input', function (){
     if(ID.val().length >=2){
     $(".check2").css('opacity', '1')
+
+          $(".check2").on('click', function (){
+             let checK_idpw = /^[a-zA-z0-9]{4,10}$/; //정규식 아이디
+             let ID1 = ID.val()
+
+             if(checK_idpw.test(ID1)){
+                   $.ajax({
+               type: "POST",
+               url: "/idcheck",
+               data: {idGive:  ID.val()},
+               success: function (response) {
+                   console.log(response)
+              console.log(response['msg'])
+               $('.check2').css('background','#fa5252')
+
+               $('.check2').text(response["msg"])
+               id_duplicate_check = response["id_duplicate_check"]
+               console.log(id_duplicate_check)
+                     }
+                 })
+
+             }
+             else {
+                $(".show2").addClass('show');
+                window.location.reload()
+             }
+
+
+
+ })
+
+
+
+
+
     }
     else {
         $(".check2").css('opacity', '0.2')
@@ -81,7 +143,7 @@ function signup(){
 
 
     // 닉네임은 한글만 아이디와 비밀번호는
-    if(check_kor.test(ninkName)  && checK_idpw.test(id)   &&checK_idpw.test(pw)   && check === pw){
+    if(nink_duplicate_check==true  && id_duplicate_check==true   &&checK_idpw.test(pw)   && check === pw){
 
 
     // 조건 닉네임 한글만 아이디 영문숫자 4-8글자
@@ -115,16 +177,17 @@ function signup(){
       alert('비밀번호 영문과숫자4-10글자이네로 작성해주세요')
     }else if(check !== pw) {
       alert('비밀번호가 일치하지않습니다!')
-    }else {
+    }
+    else if(id_duplicate_check !==true){
+         alert('아이디 중복체크 하시고 회원가입해주세요!')
+     }
+     else if(nink_duplicate_check!==true){
+         alert('닉네임 중복체크 하시고 회원가입해주세요!')
+     }
+    else {
         alert('오류 다시 시도 하세요!');
         window.location.reload();
     }
-    // else if(id_duplicate_check !==true){
-    //     alert('아이디 중복체크 하시고 회원가입해주세요!')
-    // }
-    // else if(nink_duplicate_check!==true){
-    //     alert('닉네임 중복체크 하시고 회원가입해주세요!')
-    // }
 
 
 
