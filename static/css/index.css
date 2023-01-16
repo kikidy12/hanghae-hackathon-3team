@@ -327,7 +327,7 @@ body {
     position: absolute;
     margin-left: 161px;
     margin-top: -408px;
-    z-index: 30;
+    z-index: 3;
     width: 50px;
     height: 50px;
     background: url(../image/icon_hot.png);
