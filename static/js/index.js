@@ -75,7 +75,7 @@ function setBookList(bookListData) {
 	for (let i = 0; i < bookList.length; i++) {
 		let book = bookList[i];
 
-		let temp_html = `<div class="col">
+		let temp_html = `<div class="col p03">
 											<div class="card h-100">
 													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="bookopne()">
 															<div style="background-image: url(${book["bookThumbnail"]});

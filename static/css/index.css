@@ -42,8 +42,9 @@ body {
 
 .Top3book {
 	align-items: center;
-	width: 600px;
-	margin: auto;
+	max-width: 840px;
+    width: 80%;
+    margin: auto;
 }
 
 .rankingBooks {
@@ -85,4 +86,10 @@ body {
 	position: absolute;
 	right: 1em;
 	bottom: 1em;
+}
+
+/*급하게 새로 추가한 내용*/
+.p03{
+	padding-right: calc(var(--bs-gutter-x) * .3);
+	padding-left: calc(var(--bs-gutter-x) * .3);
 }
