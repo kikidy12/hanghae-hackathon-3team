@@ -27,9 +27,8 @@ def apiRegister():
     idReceive = request.form['idGive']
     pwReceive = request.form['pwGive']
     nickNameReceive = request.form['nickNameGive']
-    userList = list(db.user.find({}, {'_id': False}))
-    userNum = len(userList)+1
-
+    userList = list(db.user.find({}, {'_id':False}))
+    userNum = len(userList) + 1
 
     pwHash= hashlib.sha256(pwReceive.encode('utf-8')).hexdigest()
 
