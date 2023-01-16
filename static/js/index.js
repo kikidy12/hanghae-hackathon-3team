@@ -59,7 +59,7 @@ function setTopBannerBookList(bookListData) {
 
 		let temp_html = `<div class="col p03">
 											<div class="card h-100">
-													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="bookopne()">
+													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="location.href='detailBooks?${book['id']}'">
 															<div style="background-image: url(${book["bookThumbnail"]});
 															background-size: 102%;
 															background-position: 50% 50%;
