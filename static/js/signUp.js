@@ -87,7 +87,7 @@ function signup(){
                 data: {
                     idGive: id,
                     pwGive: pw,
-                    nickNameGive:ninkName
+                    nickNameGive:ninkName,
                 },
                 success: function (response) {
                     if (response['result'] == 'success') {

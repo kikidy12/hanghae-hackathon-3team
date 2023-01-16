@@ -62,6 +62,9 @@ def apiRegister():
     db.user.insert_one(doc)
     return jsonify({'result':'success'})
 
+
+
+
 @app.route('/api/login', methods = ['POST'])
 def apiLogin():
     idReceive = request.form['id_give']
