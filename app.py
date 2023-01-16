@@ -15,6 +15,14 @@ def index():
 def apiBookList():
   test = getBookList()
   return test
+
+@app.route('/signUp')
+def signUp():
+  return render_template('signUp.html')
+
+@app.route('/signUp/giveInfo', methods=["POST"])
+def giveUserInfo():
+  
   
 
 if __name__ == '__main__':
