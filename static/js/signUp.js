@@ -72,12 +72,12 @@ pwShowHide.forEach(eyeIcon => {
 
 function signup(){
 
-        let ninkName = ninkname.val()
+    let ninkName = ninkname.val()
     let id = ID.val()
     let pw = PW.val()
     let check = userPWcheck.val()
-let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
-   let checK_idpw = /^[a-zA-z0-9]{4,10}$/;
+    let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
+    let checK_idpw = /^[a-zA-z0-9]{4,10}$/;
 
 
     // 닉네임은 한글만 아이디와 비밀번호는
@@ -96,7 +96,7 @@ let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
                     nickNameGive:ninkName,
                 },
                 success: function (response) {
-                    if (response['result'] == 'success') {
+                    if (response['result'] === 'success') {
                         alert('회원가입이 완료되었습니다.')
                         // 메인으로 이동
                         window.location.href = '/'
@@ -112,9 +112,9 @@ let check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
     }
     //
     else if(!checK_idpw.test(pw)){
-       $(".show3").addClass('show');
+      alert('비밀번호 영문과숫자4-10글자이네로 작성해주세요')
     }else if(check !== pw) {
-        $(".show4").addClass('show');
+      alert('비밀번호가 일치하지않습니다!')
     }else {
         alert('오류 다시 시도 하세요!');
         window.location.reload();

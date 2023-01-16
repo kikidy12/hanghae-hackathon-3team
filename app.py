@@ -66,14 +66,13 @@ def apiRegister():
 
 @app.route('/api/login', methods = ['POST'])
 def apiLogin():
-    idReceive = request.form['idGive']
-    pwReceive = request.form['pwGive']
-
+    id_receive = request.form['id_give']
+    pw_receive = request.form['pw_give']
     # 회원가입 때와 같은 방법으로 pw를 암호화합니다.
-    pwHash = hashlib.sha256(pwReceive.encode('utf-8')).hexdigest()
+    pwHash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
 
     # id, 암호화된pw을 가지고 해당 유저를 찾습니다.
-    result = db.user.find_one({'id': idReceive, 'pw': pwHash})
+    result = db.user.find_one({'userId': id_receive, 'userPassword': pwHash})
 
     # 찾으면 JWT 토큰을 만들어 발급합니다.
     if result is not None:
@@ -82,8 +81,8 @@ def apiLogin():
         # 아래에선 id와 exp를 담았습니다. 즉, JWT 토큰을 풀면 유저ID 값을 알 수 있습니다.
         # exp에는 만료시간을 넣어줍니다. 만료시간이 지나면, 시크릿키로 토큰을 풀 때 만료되었다고 에러가 납니다.
         payload = {
-            'id': idReceive,
-            # 'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=500)
+            'userId': id_receive,
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=10)
         }
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
