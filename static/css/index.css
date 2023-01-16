@@ -1,72 +1,88 @@
 .title {
-
-    text-align: center;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-    width: auto;
-    height: 250px;
-    background-image: url("http://m.photo-mall.co.kr/data/goodsold/large_314_500_2.jpg");
-    background-size: auto;
-    background-position: bottom;
-    background-origin: content-box;
-
+	text-align: center;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	width: auto;
+	height: 250px;
+	background-image: url("http://m.photo-mall.co.kr/data/goodsold/large_314_500_2.jpg");
+	background-size: auto;
+	background-position: bottom;
+	background-origin: content-box;
 }
 
 .sidebar {
-    margin: 10px auto;
-    width: auto;
-    align-items: center;
+	margin: 10px auto;
+	width: auto;
+	align-items: center;
 }
 
 .sidebar_button_right {
-    position: absolute;
-    top: 30px;
-    left: 85%;
+	position: absolute;
+	top: 30px;
+	left: 85%;
 }
 
 .sidebar_button_left {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
 }
 
 body {
-    margin: 0;
+	margin: 0;
 }
 
 .TopText {
-    text-align: center;
+	text-align: center;
 }
 
 .Top3book {
-    align-items: center;
-    width: 600px;
-    margin: auto;
+	align-items: center;
+	width: 600px;
+	margin: auto;
 }
 
 .rankingBooks {
-    background-color: darkgray;
-    align-items: center;
-    width: 600px;
-    margin: auto;
-    margin-top: 50px;
+	background-color: darkgray;
+	align-items: center;
+	width: 600px;
+	margin: auto;
+	margin-top: 50px;
 }
 
 .cardimage {
-    width: 300px;
-    margin: auto;
-    align-items: center;
+	width: 300px;
+	margin: auto;
+	align-items: center;
 }
 
 .cardtext {
-    width: 200px;
-    padding: 10px;
-    margin: auto;
-    text-align: center;
-    background-color: rgba(200, 200, 200, 0.8);
-    border-radius: 1em;
+	width: 200px;
+	padding: 10px;
+	margin: auto;
+	text-align: center;
+	background-color: rgba(200, 200, 200, 0.8);
+	border-radius: 1em;
+}
+
+.card-title {
+	word-break: keep-all;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* number of lines to show */
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.card-body {
+	min-height: 7em;
+}
+
+.card-text {
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
 }

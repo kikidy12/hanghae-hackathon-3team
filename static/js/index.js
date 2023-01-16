@@ -25,18 +25,17 @@ function setTopBannerBookList(bookListData) {
             aria-current="true" aria-label="Slide 1"></button>`;
 
 	let temp_html = `
-						<div class="carousel-item active" data-bs-interval="1000">
-						<button onclick="bookopne()">
-							<div class = "cardimage">
-							<img src="${firstBook["bookThumbnail"]}" class="d-block w-100" alt="...">
-							</div>
-							<div class="carousel-caption d-none d-md-block">
-								<div class= "cardtext" >
-								<h5>${firstBook["bookTitle"]}</h5>
-								<p>${summary}</p>
-								</div>
-							</div>
-						</button>
+						<div class="carousel-item active" data-bs-interval="10000">
+						<button style="width: 52%" onclick="bookopne()">
+									<div class="cardimage" style="padding: 145% 0 0 0; background-image: url(${firstBook["bookThumbnail"]}); background-size: cover; background-position: 50% 50%;" class = "cardimage">
+									</div>
+									<div class="carousel-caption d-none d-md-block">
+										<div class= "cardtext" >
+											<h5>${firstBook["bookTitle"]}</h5>
+											<p>${summary}</p>
+										</div>
+									</div>
+								</button>
 						</div>`;
 
 	$("#topCardIndexButton").append(temp_next_html);
@@ -51,10 +50,9 @@ function setTopBannerBookList(bookListData) {
                 aria-label="Slide ${i + 1}"></button>`;
 
 		let temp_html = `
-							<div class="carousel-item" data-bs-interval="2000">
-								<button onclick="bookopne()">
-									<div class = "cardimage">
-										<img src="${book["bookThumbnail"]}" class="d-block w-100" alt="...">
+							<div class="carousel-item" data-bs-interval="10000">
+								<button style="width: 52%" onclick="bookopne()">
+									<div class="cardimage" style="padding: 145% 0 0 0; background-image: url(${book["bookThumbnail"]}); background-size: cover; background-position: 50% 50%;" class = "cardimage">
 									</div>
 									<div class="carousel-caption d-none d-md-block">
 										<div class= "cardtext" >
@@ -78,13 +76,17 @@ function setBookList(bookListData) {
 		let book = bookList[i];
 
 		let temp_html = `<div class="col">
-											<div class="card h-10" style="width: 200px">
-													<button onclick="bookopne()">
-															<img src="${book["bookThumbnail"]}"
-																	class="card-img-top">
+											<div class="card h-100" style="width: 200px">
+													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="bookopne()">
+															<div style="background-image: url(${book["bookThumbnail"]});
+															background-size: cover;
+															background-position: 50% 50%;
+															width: 100%;
+															padding: 145% 0 0 0;"
+																	class="card-img-top"></div>
 															<div class="card-body">
 																	<h5 class="card-title">${book["bookTitle"]}</h5>
-																	<div style="text-align: right" ;>
+																	<div style="text-align: right";>
 																			<p class="card-text">
 																					좋아요 : ${book["likeCount"]}</p>
 																	</div>
