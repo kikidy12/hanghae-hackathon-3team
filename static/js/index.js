@@ -1,3 +1,23 @@
+function modalShow() {
+	let modalSide = document.querySelector(".modal-side");
+	modalSide.classList.add("show");
+}
+
+function addbooklist() {
+	let addbooklist = document.querySelector(".addbooklist");
+	if (
+		$("#booktitle").val().length >= 2 &&
+		$("#author").val().length >= 2 &&
+		$("#bookinfo").val().length >= 2 &&
+		$("#bookUrl").val().length >= 2
+	) {
+		// 데이터 전송 하기
+		alert("이제 여기서 데이터 DB에 저장하기");
+	} else {
+		alert("다시하셈");
+	}
+}
+
 function login() {
 	alert("로그인 상세 페이지로 전환.");
 }
