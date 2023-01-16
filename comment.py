@@ -30,6 +30,8 @@ def addComment():
 
   comment = db.comment.insert_one({'id': lastId + 1, 'userId': userId, 'bookId': bookId, 'comment': comment, 'isSub': False })
 
+  print("testestset : ", comment)
+
   return jsonify({'result': 'success', 'message': '등록완료'})
 
 

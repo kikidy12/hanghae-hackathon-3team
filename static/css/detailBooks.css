@@ -1,0 +1,115 @@
+* {
+	font-family: "NanumSquareNeo";
+}
+
+.container {
+	margin-top: 10px;
+}
+
+.title {
+	text-align: center;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	width: auto;
+	height: 250px;
+	background-color: white;
+	background-size: auto;
+	background-position: bottom;
+	background-origin: content-box;
+}
+
+.sidebar {
+	margin: 10px auto;
+	width: auto;
+	align-items: center;
+}
+
+.sidebar_button_right {
+	position: absolute;
+	top: 30px;
+	left: 85%;
+}
+
+.sidebar_button_left {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.upsection {
+	background-color: white;
+	margin: auto;
+	align-items: center;
+	width: 1200px;
+	height: 600px;
+}
+
+.cardimage {
+	float: left;
+	padding: 20px;
+	width: 35%;
+	align-items: flex-start;
+}
+
+.detailText {
+	background-color: white;
+	float: right;
+	padding: 20px;
+	width: 65%;
+	height: 550px;
+	align-items: center;
+}
+
+.detailText_writerinfo > div {
+	width: 50%;
+}
+
+.detailText_writerinfo > div > p {
+	width: 50%;
+	font-size: 20px;
+}
+
+.detailText_contents > p {
+	font-size: 14px;
+}
+
+.datgul_area {
+	background-color: white;
+	margin: 0 auto;
+	align-items: center;
+	width: 1200px;
+	height: 50px;
+}
+
+.datgul_area {
+	margin: 0 auto;
+	align-items: center;
+	width: 50%;
+	align-items: center;
+}
+
+.datgul_text {
+	float: left;
+	padding: 5px;
+	width: 85%;
+}
+
+.datgul_button {
+	float: right;
+	padding: 5px;
+	width: 15%;
+}
+
+.datgul_bottomlist {
+	background-color: white;
+	margin: 0 auto;
+	align-items: center;
+	width: 95%;
+	max-width: 1000px;
+	margin: 10px auto 10px auto;
+	padding: 10px;
+}

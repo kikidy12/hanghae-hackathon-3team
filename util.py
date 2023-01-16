@@ -20,7 +20,7 @@ def checkToken():
 
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        userInfo = db.user.find_one({"id": payload['id']})
+        userInfo = db.user.find_one({"userId": int(payload['userId'])})
         return userInfo
         # except jwt.ExpiredSignatureError:
         #     # 위를 실행했는데 만료시간이 지났으면 에러가 납니다.

@@ -5,6 +5,7 @@ from bookManage import *
 from book import getBook, getBookList
 from comment import addComment, addSubComment, getCommentList, deleteComment
 from favorite import addBookLikePlus
+from dislike import addBookDisLikePlus
 
 
 app = Flask(__name__)
@@ -20,6 +21,10 @@ def register():
 @app.route('/login')
 def logIn():
     return render_template('signIn.html')
+
+@app.route('/detailBooks')
+def detailBooks():
+  return render_template('detailBooks.html')
 
 @app.route('/api/book/register', methods=["POST"])
 def apiBookPOST():
@@ -41,6 +46,12 @@ def apiGetBook():
 def apiPostBookLikePlus():
   message = addBookLikePlus()
   return message
+
+@app.route('/api/book/dislike/plus', methods=["POST"])
+def apiPost():
+  message = addBookDisLikePlus()
+  return message
+
 
 @app.route('/api/book/list')
 def apiGetBookList():
