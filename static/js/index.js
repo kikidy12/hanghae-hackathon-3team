@@ -83,7 +83,7 @@ function setBookList(bookListData) {
 															background-position: 50% 50%;
 															width: 100%;
 															padding: 145% 0 0 0;
-															border-radius: 20px 2px 2px 2px;"
+															border-radius: 16px 2px 2px 2px;"
 																	class="card-img-top"></div>
 															<div class="card-body">
 																	<h5 class="card-title">${book["bookTitle"]}</h5>
