@@ -23,6 +23,7 @@ import hashlib
 app = Flask(__name__)
 
 
+# rener_pages
 @app.route('/')
 def index():
     token_receive = request.cookies.get('mytoken')
@@ -33,6 +34,17 @@ def index():
     except jwt.exceptions.DecodeError:
         return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
 
+
+@app.route('/register')
+def register():
+    return render_template('signUp.html')
+
+@app.route('/login')
+def logIn():
+    return render_template('signIn.html')
+
+
+# api
 @app.route('/api/bookdetail')
 def apiGetBook():
   json = getBook()
@@ -72,15 +84,6 @@ def apiPostSubComment():
 def apiDeleteComment():
   message = deleteComment()
   return message
-  
-
-@app.route('/register')
-def register():
-    return render_template('signUp.html')
-
-@app.route('/login')
-def logIn():
-    return render_template('signIn.html')
 
 
 @app.route('/api/register', methods=['POST'])
