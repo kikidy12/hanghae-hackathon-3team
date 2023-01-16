@@ -1,5 +1,5 @@
 *{
-	font-family: 'NanumSquareNeo';
+	font-family: 'NanumSquareNeoBold';
 }
 
 .title {
@@ -90,8 +90,8 @@ body {
 
 .card-text {
 	position: absolute;
-	right: 1em;
-	bottom: 1em;
+	right: 12px;
+	bottom: 9px;
 }
 
 /*급하게 새로 추가한 내용*/
@@ -105,14 +105,29 @@ body {
     box-shadow: 3px 3px 1px rgb(77 77 77 / 40%);
 	border-radius: 20px 2px 2px 2px;
 }
-.textBron:hover{
-	background-color:rgb(663399);
+.p03{
+	transition: 0.3s;
 }
-.textBron:hover h5{
+.p03 p{
+	font-size: 15px;
+}
+.p03 *{
+	transition: 0.3s;
+}
+.p03:hover button{
+	background-color:#663399;
+}
+.p03:hover{
+    margin-top: 11px;
+    margin-left: -2px;
+}
+.p03:hover h5{
 	color: #fff;
 }
-.textBron:hover p{
+.p03:hover p{
 	color: #fff;
+	right: 12px;
+	bottom: 14px;
 }
 
 .h-100{
