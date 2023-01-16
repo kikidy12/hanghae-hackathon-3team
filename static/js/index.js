@@ -125,7 +125,7 @@ function getBookList() {
 		url: "/api/book/list",
 		data: {},
 		success: function (response) {
-			setTopBannerBookList(response["bookList"]);
+			// setTopBannerBookList(response["bookList"]);
 			setBookList(response["bookList"]);
 		},
 	});
