@@ -50,7 +50,7 @@ def logIn():
 
 @app.route('/api/register', methods=['POST'])
 def apiRegister():
-    giveUserInfo = apiRegester()
+    giveUserInfo = apiRegister()
     return giveUserInfo
 
 @app.route('/api/login', methods = ['POST'])

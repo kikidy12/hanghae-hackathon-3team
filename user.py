@@ -23,12 +23,12 @@ import hashlib
 # [회원가입 API]
 # id, pw, nickname을 받아서, mongoDB에 저장합니다.
 # 저장하기 전에, pw를 sha256 방법(=단방향 암호화. 풀어볼 수 없음)으로 암호화해서 저장합니다.
-def apiRegester():
+def apiRegister():
     idReceive = request.form['idGive']
     pwReceive = request.form['pwGive']
     nickNameReceive = request.form['nickNameGive']
-    userNum = len(userList)+1
     userList = list(db.user.find({}, {'_id':False}))
+    userNum = len(userList) + 1
 
     pwHash= hashlib.sha256(pwReceive.encode('utf-8')).hexdigest()
 
