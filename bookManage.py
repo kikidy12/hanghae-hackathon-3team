@@ -57,3 +57,10 @@ def modifyBook():
     db.book.update_one({'id':int(idReceive)},{'$set':doc})
 
     return jsonify({'msg': '수정 완료!'})
+
+def deleteBook():
+    bookIdReceive = request.form['bookIdGive']
+    bookList = list(db.book.find({},{'_id':False}))
+
+    db.book.delete_one(bookList[bookIdReceive])
+    return jsonify({'msg': '삭제 완료!'})
