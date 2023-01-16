@@ -1,13 +1,16 @@
 function login(){
+
 let a = $('#userID').val();
         console.log(a);
+        let id =  $('#userID').val()
+        let pw =  $('#userID').val()
 
     $.ajax({
                 type: "POST",
                 url: "/api/login",
                 data: {
-                    idGive:  $('#userID').val(),
-                    pwGive: $('#userPW').val(),
+                    idGive: id,
+                    pwGive: pw,
                 },
                 success: function (response) {
                     if (response['result'] == 'success') {
