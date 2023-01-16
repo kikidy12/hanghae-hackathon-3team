@@ -35,16 +35,16 @@ def apiBookList():
 
 
 @app.route('/register')
-def signUp():
+def register():
     return render_template('signUp.html')
 
 @app.route('/logIn')
-def signUp():
+def logIn():
     return render_template('signIn.html')
 
 
 @app.route('/api/register', methods=['POST'])
-def giveUserInfo():
+def apiRegister():
     giveUserInfo = apiRegester()
     return giveUserInfo
 
