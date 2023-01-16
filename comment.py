@@ -4,7 +4,9 @@ from flask import jsonify, request
 
 # 댓글 목록 조회
 def getCommentList():
-  commentList = list(db.comment.find({}, {'_id': False}))
+  userId = int(request.args.get('uesrId'));
+  bookId = int(request.args.get('bookId'));
+  commentList = list(db.comment.find({'userId': userId, 'bookId': bookId}, {'_id': False}))
   return jsonify({'commentList':commentList})
 
 
@@ -20,7 +22,7 @@ def addComment():
   # 마지막 번호를 호출한다
   lastId = commentList[-1]['id'] if len(commentList) > 0 else 1
 
-  comment = db.comment.insert_one({'id': lastId, 'userId': userId, 'bookId': bookId, 'comment': comment, 'isSub': False })
+  comment = db.comment.insert_one({'id': lastId + 1, 'userId': userId, 'bookId': bookId, 'comment': comment, 'isSub': False })
 
   return jsonify({'message':'등록완료'})
 
@@ -28,17 +30,20 @@ def addComment():
 # 대댓글 등록
 def addSubComment():
   userId = int(request.form['uesrId']);
-  bookId = int(request.form['bookId']);
   commentId = int(request.form['commentId']);
   comment = request.form['comment'];
 
-  # 장소목록을 num순으로 정렬
-  comment_list = list(db.comment.find({}, {'_id': False}).sort('id'))
+  # 대댓글이 달릴 댓글
+  preComment = db.comment.find_one({'id': commentId}, {'_id': False})
+
+  # 댓글목록을 id순으로 정렬
+  commentList = list(db.comment.find({}, {'_id': False}).sort('id'))
+
 
   # 마지막 번호를 호출한다
-  lastId = comment_list[-1]['id'] if len(comment_list) > 0 else 1
+  lastId = commentList[-1]['id'] if len(commentList) > 0 else 1
 
-  comment = db.comment.insert_one({'id': lastId, 'userId': userId, 'bookId': bookId, 'commentId': commentId, 'comment': comment, 'isSub': True })
+  comment = db.comment.insert_one({'id': lastId + 1, 'userId': userId, 'bookId': preComment['bookId'], 'commentId': preComment['id'], 'comment': comment, 'isSub': True })
 
   return jsonify({'message':'등록완료'})
 

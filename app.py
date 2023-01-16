@@ -4,6 +4,7 @@ from user import *
 from bookManage import *
 from book import getBook, getBookList
 from comment import addComment, addSubComment, getCommentList, deleteComment
+from favorite import addBookLikePlus
 
 app = Flask(__name__)
 
@@ -15,6 +16,12 @@ def index():
 def apiGetBook():
   json = getBook()
   return json
+
+
+@app.route('/api/bookLikePlus', methods=["POST"])
+def apiPostBookLikePlus():
+  message = addBookLikePlus()
+  return message
 
 @app.route('/api/booklist')
 def apiGetBookList():
