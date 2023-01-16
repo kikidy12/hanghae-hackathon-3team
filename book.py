@@ -37,7 +37,7 @@ def getBook():
 # 책 목록 조회
 def getBookList():
   bookList = list(db.book.find({}, {'_id': False}))
-  return jsonify(bookList)
+  return jsonify({"bookList": bookList})
 
 
 # 책 등록 조회
