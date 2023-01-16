@@ -1,0 +1,363 @@
+* {
+    font-family: 'NanumSquareNeoBold';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+* {
+}
+
+/* 모달창  */
+.modal-side {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.modal-in {
+    width: 50%;
+    height: 70%;
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.modal-main {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 20px;
+}
+
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+body .app {
+    width: 100%;
+}
+
+.app header {
+    width: 100%;
+    height: 100px;
+    background: #fff;
+
+}
+
+.header-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.header-list div {
+    display: flex;
+    align-items: center;
+}
+
+.header-list div nav {
+    margin-top: 30px;
+
+    background: #2c3e50;
+    color: white;
+    padding: 0 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    border-radius: 20px;
+
+}
+
+
+.main-img {
+    width: 100%;
+    height: 300px;
+
+    background-image: url('../image/banner_main.jpg');
+    background-position: 50% 65%;
+    background-size: 75%;
+
+    color: rgb(54 54 54);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+}
+.main-img h1{
+    font-family: 'NanumSquareNeoHeavy';
+    margin-top: 60px;
+}
+
+.main-img button{
+    width: 200px;
+    height: 50px;
+
+    border-radius: 50px;
+    border: 3px solid rgb(54 54 54);
+
+    margin-top: 7px;
+    font-family: 'NanumSquareNeoExtraBold';
+    color: rgb(54 54 54);
+}
+
+.main-img button:hover {
+    border: 2px solid white;
+}
+
+.addbooklist {
+    width: 200px;
+    height: 50px;
+
+
+    background: #2c3e50;;
+    color: white;
+    border-radius: 50px;
+    border: 1px solid white;
+
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.addbooklist:hover {
+    box-shadow: 0 14px 28px rgba(63, 67, 179, 0.25), 0 10px 10px rgba(97, 111, 191, 0.22);
+}
+
+.title {
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    width: auto;
+    height: 250px;
+    background-image: url("http://m.photo-mall.co.kr/data/goodsold/large_314_500_2.jpg");
+    background-size: auto;
+    background-position: bottom;
+    background-origin: content-box;
+}
+
+.sidebar {
+    margin: 10px auto;
+    width: auto;
+    align-items: center;
+}
+
+.sidebar_button_right {
+    position: absolute;
+    top: 30px;
+    left: 85%;
+}
+
+.sidebar_button_left {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+body {
+    margin: 0;
+}
+
+.TopText {
+    text-align: center;
+}
+
+.Top3book {
+    align-items: center;
+    max-width: 840px;
+    width: 80%;
+    margin: auto;
+}
+
+.rankingBooks {
+    background-color: darkgray;
+    align-items: center;
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.cardimage {
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.cardtext {
+    width: 200px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(200, 200, 200, 0.8);
+    border-radius: 1em;
+}
+
+.card-title {
+    word-break: keep-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'NanumSquareNeoExtraBold';
+    /*color: rgb(54 54 54);*/
+    color: rgb(243 243 243);
+}
+
+.card-body {
+    min-height: 7em;
+}
+
+.card-text {
+    position: absolute;
+    right: 12px;
+    bottom: 9px;
+    color: rgb(243 243 243);
+}
+
+/*급하게 새로 추가한 내용*/
+.p03 {
+    padding-right: calc(var(--bs-gutter-x) * .4);
+    padding-left: calc(var(--bs-gutter-x) * .4);
+}
+
+.testBton {
+    border: 1px gray;
+    box-shadow: 3px 3px 1px rgb(77 77 77 / 40%);
+    border-radius: 20px 2px 2px 2px;
+    background-color: #4b5660;
+}
+
+.p03 {
+    transition: 0.3s;
+}
+
+.p03 p {
+    font-size: 15px;
+}
+
+.p03 * {
+    transition: 0.3s;
+}
+
+.p03:hover button {
+    background-color: #663399;
+}
+
+.Top3book.w100 .p03:hover button.testBton {
+    background-color: #4b5660;
+    box-shadow: 0px 5px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.Top3book.w100 .p03:hover button.testBton h5 {
+    color: #ffffff;
+}
+.Top3book.w100 .p03:hover button.testBton div p{
+    color: #ffffff;
+}
+
+.p03:hover {
+    margin-top: 11px;
+}
+
+.p03:hover h5 {
+    color: #fff;
+}
+
+.p03:hover p {
+    color: #fff;
+    bottom: 14px;
+}
+
+.h-100 {
+    bottom: 0;
+    border: 0;
+}
+
+#cards-box{
+    margin-top: 10px;
+}
+
+.Top3book.w100{
+    width: 100%;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1),rgba(255,255,255,0.15), rgba(255,255,255,0.1), transparent);
+    background-color: #663399;
+    max-width:100%;
+    padding-left: calc(50% - 420px);
+    padding-right: calc(50% - 420px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 40%);
+    margin-top: 20px;
+}
+
+.Top3book.w100 .h-100{
+    background-color: #663399;
+}
+.Top3book.w100 .testBton{
+    background-color: #eaeaea;
+}
+.Top3book.w100 .card-title{
+    color: #4b5660;
+}
+.Top3book.w100 .p03 p {
+    font-size: 15px;
+    color: #4b5660;
+}
+.Top3book.w100 .p03::after{
+    display: block;
+    position: absolute;
+    margin-left: 161px;
+    margin-top: -408px;
+    z-index: 30;
+    width: 50px;
+    height: 50px;
+    background: url(../image/icon_hot.png);
+    background-size: 100%;
+    transition: 0.3s;
+    content: "";
+}
+.Top3book.w100 .p03:hover::after{
+    margin-top: -413px;
+}
+
+
+
+@media screen and (max-width:1070px) {
+
+.Top3book.w100{
+    width: 100%;
+    max-width:100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+    .main-img{
+        background-position: 50% 69%;
+        background-size: 1000px;
+    }
+    .main-img h1{
+        margin-top: calc(15% - 30px);
+    }
+
+.Top3book.w100 .p03::after{
+    display: none;
+}
+
+}

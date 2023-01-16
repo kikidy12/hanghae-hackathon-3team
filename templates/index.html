@@ -1,10 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<link
+			href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
 
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" href="../static/css/index.css" />
+		<script type="text/javascript" src="../static/js/index.js"></script>
+
+		<title>(IT-Check)이책 어때</title>
+	</head>
+	<body>
+		<div class="modal-side">
+			<div class="modal-in">
+				<h2>📚 읽어본 책 등록하기</h2>
+				<div class="modal-main">
+					<div class="form-floating mb-3">
+						<input
+							id="booktitle"
+							type="text"
+							class="form-control"
+							placeholder="name@example.com"
+						/>
+						<label>책제목</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input
+							id="author"
+							type=""
+							class="form-control"
+							placeholder="name@example.com"
+						/>
+						<label>저자</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input
+							id="bookinfo"
+							type="email"
+							class="form-control"
+							placeholder="name@example.com"
+						/>
+						<label>간단한소개</label>
+					</div>
+
+					<div class="form-floating mb-3">
+						<input
+							id="bookUrl"
+							type="url"
+							class="form-control"
+							placeholder="name@example.com"
+						/>
+						<label>책사진링크</label>
+					</div>
+
+					<button onclick="addbooklist()" class="addbooklist">
+						등록하기.. !
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="app">
+				<header>
+					<div class="header-list">
+						<!-- 글등록, -->
+						<div>
+							<nav onclick="">글등록하기!!</nav>
+							<nav>dd</nav>
+						</div>
+
+						<!-- 로그인 로그아웃 -->
+						<!-- <div>
+                    <span class="main-text">IT책어때용!</span>
+                </div> -->
+						<!-- 로그인 로그아웃 -->
+
+						<div>
+							<nav onclick="">로그인 하러가기</nav>
+							<nav onclick="">로그아웃</nav>
+						</div>
+					</div>
+				</header>
+				<div class="main-img">
+					<h1>IT-Check 어때</h1>
+					<button onclick="modalShow()" id="addPost" class="back">책 등록하기</button>
+				</div>
+			</div>
+			<div class="Top3book w100">
+                <div class="row row-cols-1 row-cols-md-4 g-3" id="cards-box2"></div>
+            </div>
+			<div class="Top3book">
+				<div class="row row-cols-1 row-cols-md-4 g-3" id="cards-box"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function () {
+			getBookList();
+		});
+
+		window.addEventListener("click", (e) => {
+			let modalSide = document.querySelector(".modal-side");
+			if (e.target == modalSide) {
+				console.log("맞아요");
+
+				modalSide.classList.remove("show");
+			}
+			console.log(e.target);
+			length;
+		});
+	</script>
 </html>
