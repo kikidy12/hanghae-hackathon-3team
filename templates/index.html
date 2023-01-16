@@ -23,7 +23,7 @@
             justify-content: center;
             padding-top: 10px;
             width: auto;
-            height: 150px;
+            height: 250px;
             background-image: url("http://m.photo-mall.co.kr/data/goodsold/large_314_500_2.jpg");
             background-size: auto;
             background-position: bottom;
@@ -33,29 +33,28 @@
 
         .sidebar {
             margin: 10px auto;
-            width: 1500px;
+            width: auto;
             align-items: center;
         }
 
-        .sidebar > hr {
-            width: 50%;
-            height: 10px;
-            margin-left: auto;
-            margin-right: auto;
+        .sidebar_button_right {
+            position: absolute;
+            top: 30px;
+            left: 85%;
         }
 
-        .btn {
-            display: inline-block;
+        .sidebar_button_left {
+            position: absolute;
+            top: 30px;
+            left: 30px;
         }
 
-        .sidebar > button {
+        body {
+            margin: 0;
+        }
+
+        .TopText {
             text-align: center;
-            background-color: azure;
-            width: 150px;
-            height: 30px;
-            margin-top: 10px;
-            margin-right: 10px;
-            margin-left: 10px;
         }
 
         .Top3book {
@@ -63,7 +62,8 @@
             width: 600px;
             margin: auto;
         }
-        .rankingBooks{
+
+        .rankingBooks {
             background-color: darkgray;
             align-items: center;
             width: 600px;
@@ -74,112 +74,185 @@
     </style>
 
     <script>
-        function login(){
-                    window.location.reload()
+        function login() {
+            window.location.reload()
             alert("로그인 상세 페이지로 전환.");
         }
-        function makereview(){
-                    window.location.reload()
+
+        function makereview() {
+            window.location.reload()
             alert("리뷰하기 페이지로 전환.");
         }
-        function bookopne(){
-                    window.location.reload()
+
+        function bookopne() {
+            window.location.reload()
             alert("해당 책 상세 페이지로 전환.");
         }
     </script>
 </head>
 <body>
+<div class="section">
 <div class="title">
     <h1>이 책 어때요</h1>
 </div>
 <div class="sidebar">
-    <div class="btn" style="display: flex; justify-content: center">
-        <button onclick="makereview()" type="button" class="btn btn-outline-primary">글쓰기</button>
-        <button type="button" class="btn btn-outline-primary">?</button>
-        <button onclick="login()" type="button" class="btn btn-outline-primary">로그인/회원가입</button>
+    <div class="sidebar_button_left">
+        <button> 로그인하기</button>
+        <button> 회원가입</button>
     </div>
-    <hr/>
-</div>
+    <div class="sidebar_button1">
+    </div>
+    <div class="sidebar_button_right">
+        <button> 로그인하기</button>
+        <button> 회원가입</button>
+    </div>
+    <div class="sidebar_button1">
+    </div>
 
-<div class="Top3book">
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-box">
-        <div class="col">
-            <div class="card h-10" style="width: 200px">
-                <button onclick="bookopne()">
-                <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">책 제목이 들어갑니다</h5>
-                    <div style="text-align: right" ;>
-                        <p class="card-text"> 좋아요 : </p>
-                    </div>
+    </div>
+    <div class="Top3book" id="slider">
+
+    <div class="TopText">
+        <p>Top Ranking</p>
+    </div>
+        <ul class ="slideList">
+			<li>
+				<a>
+                <div class="card h-10" style="width: 200px">
+                    <button onclick="bookopne()">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">책 제목이 들어갑니다</h5>
+                            <div style="text-align: right" ;>
+                                <p class="card-text"> 좋아요 : </p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+				</a>
+			</li>
+			<li>
+				<a>
+                <div class="card h-10" style="width: 200px">
+                    <button onclick="bookopne()">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">책 제목이 들어갑니다</h5>
+                            <div style="text-align: right" ;>
+                                <p class="card-text"> 좋아요 : </p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+				</a>
+			</li>
+			<li>
+				<a>
+                <div class="card h-10" style="width: 200px">
+                    <button onclick="bookopne()">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">책 제목이 들어갑니다</h5>
+                            <div style="text-align: right" ;>
+                                <p class="card-text"> 좋아요 : </p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+				</a>
+			</li>
+        </ul>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-box">
+            <div class="col">
+                <div class="card h-10" style="width: 200px">
+                    <button onclick="bookopne()">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">책 제목이 들어갑니다</h5>
+                            <div style="text-align: right" ;>
+                                <p class="card-text"> 좋아요 : </p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-10" style="width: 200px">
+                    <button onclick="bookopne()">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">책 제목이 들어갑니다</h5>
+                            <div style="text-align: right" ;>
+                                <p class="card-text"> 좋아요 : </p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-10" style="width: 200px">
+                    <button onclick="bookopne()">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">책 제목이 들어갑니다</h5>
+                            <div style="text-align: right" ;>
+                                <p class="card-text">
+                                    좋아요 : </p>
+                            </div>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-10" style="width: 200px">
-                <button onclick="bookopne()">
-                <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">책 제목이 들어갑니다</h5>
-                    <div style="text-align: right" ;>
-                        <p class="card-text"> 좋아요 : </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-10" style="width: 200px">
-                <button onclick="bookopne()">
-                <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">책 제목이 들어갑니다</h5>
-                    <div style="text-align: right" ;>
-                        <p class="card-text">
-                            좋아요 : </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class = slider_radio>
+	<input type="radio" name="slide" id="slide01" >
+	<input type="radio" name="slide" id="slide02" checked>
+	<input type="radio" name="slide" id="slide03">
 </div>
 
-<div class="rankingBooks">
-    <div class = "bookLine">
+    <div class="rankingBooks">
+        <div class="bookLine">
             num.
-        <button onclick="bookopne()">
-            책 이름이 여기에 적힙니다.
-            저자명
-            /
-            출판사
-            좋아요 : num
-        </button>
-    </div>
-    <div class = "bookLine">
+            <button onclick="bookopne()">
+                책 이름이 여기에 적힙니다.
+                저자명
+                /
+                출판사
+                좋아요 : num
+            </button>
+        </div>
+        <div class="bookLine">
             num.
-        <button onclick="bookopne()">
-            책 이름이 여기에 적힙니다.
-            저자명
-            /
-            출판사
-            좋아요 : num
-        </button>
-    </div>
-    <div class = "bookLine">
+            <button onclick="bookopne()">
+                책 이름이 여기에 적힙니다.
+                저자명
+                /
+                출판사
+                좋아요 : num
+            </button>
+        </div>
+        <div class="bookLine">
             num.
-        <button onclick="bookopne()">
-            책 이름이 여기에 적힙니다.
-            저자명
-            /
-            출판사
-            좋아요 : num
-        </button>
+            <button onclick="bookopne()">
+                책 이름이 여기에 적힙니다.
+                저자명
+                /
+                출판사
+                좋아요 : num
+            </button>
+        </div>
+
     </div>
-    
+
+
 </div>
-
-
+</div>
 </body>
 </html>
