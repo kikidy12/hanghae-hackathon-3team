@@ -27,8 +27,8 @@ function addDislike() {
 }
 
 function addComment() {
-	document.cookie =
-		"mytoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJoYXJyeSIsImV4cCI6MTY3MzkwMTAzOX0.FFk4o-FRdbFkaBvzc2lbpMbLGzPAVP4lrUcg23W_Soc";
+	// document.cookie =
+	// 	"mytoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJoYXJyeSIsImV4cCI6MTY3MzkwMTAzOX0.FFk4o-FRdbFkaBvzc2lbpMbLGzPAVP4lrUcg23W_Soc";
 
 	let comment = $("#replyInput").val();
 
