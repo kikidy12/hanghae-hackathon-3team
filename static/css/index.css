@@ -94,13 +94,14 @@ body {
 
 /*급하게 새로 추가한 내용*/
 .p03{
-	padding-right: calc(var(--bs-gutter-x) * .3);
-	padding-left: calc(var(--bs-gutter-x) * .3);
+	padding-right: calc(var(--bs-gutter-x) * .4);
+	padding-left: calc(var(--bs-gutter-x) * .4);
 }
 
 .testBton{
 	border: 1px gray;
     box-shadow: 3px 3px 1px rgb(77 77 77 / 40%);
+	border-radius: 20px 2px 2px 2px;
 }
 .h-100{
 	bottom: 0;
