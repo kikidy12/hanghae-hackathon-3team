@@ -6,24 +6,28 @@ from comment import *
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
-  return render_template('index.html')
+    return render_template('index.html')
 
 
 @app.route('/api/book')
 def apiBookList():
-  test = getBookList()
-  return test
+    test = getBookList()
+    return test
+
 
 @app.route('/signUp')
 def signUp():
-  return render_template('signUp.html')
+    return render_template('signUp.html')
+
 
 @app.route('/signUp/giveInfo', methods=["POST"])
 def giveUserInfo():
-  
-  
+    giveUserInfo = apiRegester()
+    return giveUserInfo
+
 
 if __name__ == '__main__':
-  app.run('0.0.0.0', port=5500, debug=True)
+    app.run('0.0.0.0', port=5500, debug=True)
