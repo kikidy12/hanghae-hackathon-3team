@@ -15,15 +15,17 @@ import datetime
 import hashlib
 
 
+# jwt 토큰 검증으로 user정보 처리
 def checkToken():
-    token_receive = request.cookies.get('mytoken')
-
     try:
+        token_receive = request.cookies.get('mytoken')
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         userInfo = db.user.find_one({"userId": int(payload['userId'])})
         return userInfo
-        # except jwt.ExpiredSignatureError:
-        #     # 위를 실행했는데 만료시간이 지났으면 에러가 납니다.
-        #     return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})
+    # except jwt.ExpiredSignatureError:
+    # 토큰 오류시 error발생
     except jwt.exceptions.DecodeError:
-        return None
+        raise Exception('토큰 오류')
+    # 기타 에러 발생시 에러 raise
+    except Exception as e:
+        raise e
