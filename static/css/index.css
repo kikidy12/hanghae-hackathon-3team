@@ -309,13 +309,25 @@ body {
     font-size: 15px;
     color: #4b5660;
 }
+.Top3book.w100 .p03::after{
+    display: block;
+    position: absolute;
+    margin-left: 161px;
+    margin-top: -408px;
+    z-index: 30;
+    width: 50px;
+    height: 50px;
+    background: url(../image/icon_hot.png);
+    background-size: 100%;
+    content: "";
+}
+
 
 
 @media screen and (max-width:1070px) {
 
 .Top3book.w100{
     width: 100%;
-    background-color: #4b5660;
     max-width:100%;
     padding-left: 10%;
     padding-right: 10%;
@@ -327,5 +339,9 @@ body {
     .main-img h1{
         margin-top: calc(15% - 30px);
     }
+
+.Top3book.w100 .p03::after{
+    display: none;
+}
 
 }
