@@ -185,6 +185,7 @@ body {
     max-width: 840px;
     width: 80%;
     margin: auto;
+    padding-bottom: 20px;
 }
 
 .rankingBooks {
