@@ -48,8 +48,8 @@ def detailBooks():
 
 @app.route('/api/book/register', methods=["POST"])
 def apiBookPOST():
-  testBook = registerBook()
-  return testBook
+    testBook = registerBook()
+    return testBook
 
 @app.route('/api/book/modify', methods=["POST"])
 def apiModifyBookPOST():
@@ -196,7 +196,7 @@ def apiPostComment():
   return message
 
 
-@app.route('/api/omment/sub', methods=["POST"])
+@app.route('/api/comment/sub', methods=["POST"])
 def apiPostSubComment():
   message = addSubComment()
   return message

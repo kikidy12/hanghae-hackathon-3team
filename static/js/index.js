@@ -9,10 +9,26 @@ function addbooklist() {
 		$("#booktitle").val().length >= 2 &&
 		$("#author").val().length >= 2 &&
 		$("#bookinfo").val().length >= 2 &&
+		$("#publisher").val().length >= 2 &&
 		$("#bookUrl").val().length >= 2
 	) {
 		// 데이터 전송 하기
-		alert("이제 여기서 데이터 DB에 저장하기");
+		let doc = {
+			bookTitleGive: $("#booktitle").val(),
+			bookAuthorGive: $("#author").val(),
+			bookThumbnailGive: $("#bookUrl").val(),
+			bookPublisherGive: $("#publisher").val(),
+			bookSummaryGive: $("#bookinfo").val(),
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "/api/book/register",
+			data: doc,
+			success: function (response) {
+				console.log(response);
+			},
+		});
 	} else {
 		alert("다시하셈");
 	}
@@ -31,6 +47,7 @@ function bookopne() {
 }
 
 function setTopBannerBookList(bookListData) {
+	console.log(bookListData);
 	let bookList = bookListData.sort(function (a, b) {
 		if (a.hasOwnProperty("likeCount")) {
 			return b.likeCount - a.likeCount;
@@ -76,7 +93,7 @@ function setBookList(bookListData) {
 
 		let temp_html = `<div class="col p03">
 											<div class="card h-100">
-													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="bookopne()">
+													<button class="testBton" style="padding: 3% 3% 0 3%;" onclick="location.href='/detailBooks?${book["id"]}'">
 															<div style="background-image: url(${book["bookThumbnail"]});
 															background-size: 102%;
 															background-position: 50% 50%;

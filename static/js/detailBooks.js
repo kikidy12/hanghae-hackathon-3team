@@ -4,20 +4,22 @@ function saveReply() {
 	window.location.reload();
 }
 function addLike() {
+	const receivedData = location.href.split("?")[1];
 	$.ajax({
 		type: "POST",
 		url: "/api/book/like/plus",
-		data: { bookId: 1 },
+		data: { bookId: receivedData },
 		success: function (response) {
 			window.location.reload();
 		},
 	});
 }
 function addDislike() {
+	const receivedData = location.href.split("?")[1];
 	$.ajax({
 		type: "POST",
 		url: "/api/book/dislike/plus",
-		data: { bookId: 1 },
+		data: { bookId: receivedData },
 		success: function (response) {
 			window.location.reload();
 		},
@@ -41,10 +43,11 @@ function addComment() {
 }
 
 function getBookDetail() {
+	const receivedData = location.href.split("?")[1];
 	$.ajax({
 		type: "GET",
 		url: "/api/book/detail",
-		data: { bookId: 1 },
+		data: { bookId: receivedData },
 		success: function (response) {
 			let book = response.book;
 			let commentList = book.comment;

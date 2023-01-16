@@ -13,8 +13,8 @@ def getBook():
             # sql의 join기능을 수행
             '$lookup': {
                 'from': "comment",
-                'localField': "comment.bookId",
-                'foreignField': "book.id",
+                'localField': "id",
+                'foreignField': "bookId",
                 'as': "comment",
             },
         },
