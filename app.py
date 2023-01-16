@@ -38,7 +38,7 @@ def apiBookList():
 def register():
     return render_template('signUp.html')
 
-@app.route('/logIn')
+@app.route('/login')
 def logIn():
     return render_template('signIn.html')
 

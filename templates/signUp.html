@@ -1,10 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/css/signUp.css">
+    <title>Document</title>
 </head>
-<body>
 
+<body>
+    <div class="signup">
+        <form action="#">
+            <h2>it📚어때요..!</h2>
+            <!-- 닉네임 -->
+<!--required-->
+            <div class="input-list">
+                <i class="fa-regular fa-user ico"></i>
+                <input type="text" id="userNinkName" minlength="2" maxlength="5" placeholder="닉네임" >
+                <button class="check1">중복체크</button>
+              <p class="show1">닉네임은 한글만 입력해주세요</p>
+            </div>
+
+            <!-- 아이디 -->
+            <div class="input-list">
+                <i class="fa-regular fa-envelope ico"></i>
+                <input type="text" id="userID" placeholder="아이디" >
+                <button class="check2">중복체크</button>
+                      <p class="show2">아이디는 영문과 숫자 4-10 글자내로 입력해주세요!</p>
+            </div>
+
+
+            <!-- 비밀번호 -->
+            <div class="input-list-pw">
+                <i class="fa-solid fa-lock ico icon"></i>
+                <input type="password" id="userPW" class="password" placeholder="비밀번호" >
+                <button><i class="fa-regular fa-eye  showHidePw"></i></button>
+                <p class="show3">비번은 영문과 숫자 4-10 글자내로 입력해주세요!</p>
+            </div>
+
+
+            <div class="input-list-pw">
+                <i class="fa-solid fa-check ico icon"></i>
+                <input type="password" id="userPWcheck" class="password" placeholder="비밀번호체크">
+                <button><i class="fa-regular fa-eye  showHidePw"></i></button>
+                <p class="show4">위에 비밀번호와 다릅니다.</p>
+            </div>
+
+            <div class="last-list">
+                <div>
+                    <button class="btn-1" id="makeuser" onclick="signup() ">회원가입 완료하기!</button>
+                </div>
+
+                <div class="a-list">
+                <a href="#">로그인 하러가기!</a>
+            </div>
+            </div>
+
+
+        </form>
+    </div>
+
+
+    <script src="../static/js/signUp.js"></script>
 </body>
+
 </html>
