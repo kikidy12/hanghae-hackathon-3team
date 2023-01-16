@@ -15,7 +15,16 @@ def index():
 def apiBookList():
   test = getBookList()
   return test
-  
+
+@app.route('/api/bookRegister', methods=["POST"])
+def apiBookPOST():
+  testBook = registerBook()
+  return testBook
+
+@app.route('/api/bookModify', methods=["POST"])
+def apiModifyBookPOST():
+  testBook = modifyBook()
+  return testBook
 
 if __name__ == '__main__':
   app.run('0.0.0.0', port=5500, debug=True)
