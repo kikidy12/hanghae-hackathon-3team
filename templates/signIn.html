@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 제이쿼리 cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 제이쿼리 쿠키 cdn~ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <!-- 나무 cdn -->
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
@@ -63,39 +65,8 @@
     </div>
 
 
+    <script src="../static/js/signIn.js"></script>
 
-<script>
- function login() {
-   if($("#userPW").val().length>3 && $("#userID").val().length>3){
-
-       console.log('dd')
-           $.ajax({
-                type: "POST",
-                url: "/api/login",
-                data: {
-                    id_give: $('#userID').val(), pw_give: $('#userPW').val()
-                },
-                success: function (response) {
-                    console.log(response)
-                    // 지금여기가 안되는 부분인가 !!
-                    if (response['result'] == 'success') {
-                        alert('로그인 완료.')
-                       $.cookie('mytoken', response['token']);
-                        // 메인으로 이동
-                        window.location.href = '/register'
-                    } else {
-                        alert(response['msg'])
-                    }
-                }
-
-            })
-
-
-
-
-   }
-}
-</script>
 </body>
 
 </html>

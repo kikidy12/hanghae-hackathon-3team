@@ -1,9 +1,7 @@
-
 from flask import Flask, render_template, jsonify, session, redirect, url_for
 from bookManage import *
 from book import *
 from comment import *
-
 
 # JWT 토큰을 만들 때 필요한 비밀문자열입니다. 아무거나 입력해도 괜찮습니다.
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 할 수 있습니다.
@@ -30,8 +28,8 @@ def index():
 
 @app.route('/api/book')
 def apiBookList():
-  test = getBookList()
-  return test
+    test = getBookList()
+    return test
 
 
 @app.route('/register')
@@ -95,6 +93,8 @@ def apiRegister():
     return jsonify({'result':'success'})
 
 
+
+
 @app.route('/api/login', methods = ['POST'])
 def apiLogin():
     idReceive = request.form['idGive']
@@ -152,4 +152,3 @@ def apiValid():
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5500, debug=True)
-
