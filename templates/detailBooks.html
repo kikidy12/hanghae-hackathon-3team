@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
 
     <meta charset="UTF-8">
     <title>Title</title>
 
     <script>
-        function save_datgul(){
+        function save_datgul() {
             let contents = $('#datgul_contents').val()
             alert(contents)
             window.location.reload()
@@ -24,6 +26,14 @@
     </script>
 
     <style>
+        * {
+            font-family: 'NanumSquareNeo';
+        }
+
+        .container {
+            margin-top: 10px;
+        }
+
         .title {
 
             text-align: center;
@@ -35,7 +45,7 @@
             padding-top: 10px;
             width: auto;
             height: 250px;
-            background-image: url("http://m.photo-mall.co.kr/data/goodsold/large_314_500_2.jpg");
+            background-color: white;
             background-size: auto;
             background-position: bottom;
             background-origin: content-box;
@@ -61,7 +71,7 @@
         }
 
         .upsection {
-            background-color: gray;
+            background-color: white;
             margin: auto;
             align-items: center;
             width: 1200px;
@@ -76,7 +86,7 @@
         }
 
         .detailText {
-            background-color: gold;
+            background-color: white;
             float: right;
             padding: 20px;
             width: 65%;
@@ -85,22 +95,22 @@
 
         }
 
-        .detailText_writerinfo > div {
+        .detailText_writerinfo>div {
             width: 50%;
 
         }
 
-        .detailText_writerinfo > div > p {
+        .detailText_writerinfo>div>p {
             width: 50%;
             font-size: 20px;
         }
 
-        .detailText_contents > p {
+        .detailText_contents>p {
             font-size: 14px;
         }
 
         .datgul_area {
-            background-color: gray;
+            background-color: white;
             margin: 0 auto;
             align-items: center;
             width: 1200px;
@@ -127,7 +137,7 @@
         }
 
         .datgul_bottomlist {
-            background-color: gold;
+            background-color: white;
             margin: 0 auto;
             align-items: center;
             width: 95%;
@@ -135,99 +145,98 @@
             margin: 10px auto 10px auto;
             padding: 10px;
         }
-
-
     </style>
 </head>
+
 <body>
-<div class="title">
-</div>
-<div class="sidebar">
-    <div class="sidebar_button_left">
-        <button> 로그인하기</button>
-        <button> 회원가입</button>
+    <div class="title" style="height: 100px;">
     </div>
-    <div class="sidebar_button1">
-    </div>
-    <div class="sidebar_button_right">
-        <button> 로그인하기</button>
-        <button> 회원가입</button>
-    </div>
-    <div class="sidebar_button1">
-    </div>
-    <div class="upsection">
-        <div class="cardimage">
-
-            <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg"
-                 class="card-img-top">
-        </div>
-        <div class="detailText">
-            <div class="detailText_head">
-                <h3>책 제목이 들어갑니다</h3>
-                <hr style="height: 10px">
+    <header>
+        <div style="margin: 0;">
+            <div class="sidebar_button_right">
+                <button class="btn btn-outline-dark"> 로그인하기</button>
+                <button class="btn btn-outline-dark"> 회원가입</button>
             </div>
-            <div class="detailText_writerinfo">
-                <div class="detailText_writer">
+        </div>
+    </header>
 
-                    <p>와 졸리다</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">About Us</a>
+            </div>
+        </nav>
+    </nav>
+    <section>
+        <div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <img src="http://image.yes24.com/momo/TopCate3902/MidCate5/390147873.jpg" class="rounded">
+                    </div>
+                    <div class="col">
+                        <div class="detailText_head">
+                            <h3>책 제목이 들어갑니다</h3>
+                            <hr style="height: 10px">
+                        </div>
+                        <div class="detailText_writerinfo">
+                            <div class="detailText_writer">
+                                <p>와 졸리다</p>
+                            </div>
+                            <div class="detailText_publisher">
+                                <p>자면 안돼</p>
+                            </div>
+                        </div>
+                        <div class="detailText_contents">
+                            <p>당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에
+                                좋아당근은 눈에
+                                좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은
+                                눈에 좋아당근은 눈에
+                                좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은
+                                눈에 좋아당근은 눈에
+                                좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은
+                                눈에 좋아당근은 눈에
+                                좋아당근은 눈에 좋아당근은 눈에 좋아
+                            </p>
+                        </div>
+                        <button onclick="like()" type="button" class="btn btn-outline-primary">좋아요</button>
+                        <button onclick="like()" type="button" class="btn btn-outline-danger">싫어요</button>
 
+                    </div>
                 </div>
-                <div class="detailText_publisher">
-                    <p>자면 안돼</p>
+            </div>
+        </div>
+        <div class="container">
+        <div class="row align-items-center">
+            <div class="col-9">
+                <input type="email" class="form-control" id="datgul_contents" placeholder="로그인을 하셔야 댓글을 작성하실 수 있습니다.">
+            </div>
+            <div class="col-3">
+                <button onclick="save_datgul()" type="button" class="btn btn-dark">댓글 남기기</button>
+            </div>
+        </div>
+        </div>
 
-                </div>
-            </div>
-            <div class="detailText_contents">
-                <p>당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에
-                    좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에
-                    좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에
-                    좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에 좋아당근은 눈에
-                    좋아당근은 눈에 좋아당근은 눈에 좋아</p>
+        <div class="container align-items-center">
 
-            </div>
+            <ul class="list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
         </div>
-    </div>
 
-</div>
-<div class="datgul_area">
-    <div class="datgul_text">
-        <input type="email" class="form-control" id="datgul_contents" placeholder="로그인을 하셔야 댓글을 작성하실 수 있습니다.">
-    </div>
-    <div class="datgul_button">
-        <button onclick="save_datgul()" type="button" class="btn btn-dark">댓글 남기기</button>
-    </div>
-</div>
-<P></P>
-<div class="datgul_bottomlist">
-    <div class="col">
-        <div class="card h-50">
-            <div class="card-body">
-                <p class="card-text">작성자명</p>
-                <footer class="blockquote-footer">댓글 내용이 여기에 샤랄랄라랄라라라</footer>
-            </div>
-        </div>
-        <div class="card h-50">
-            <div class="card-body">
-                <p class="card-text">작성자명</p>
-                <footer class="blockquote-footer">댓글 내용이 여기에 샤랄랄라랄라라라</footer>
-            </div>
-        </div>
-        <div class="card h-50">
-            <div class="card-body">
-                <p class="card-text">작성자명</p>
-                <footer class="blockquote-footer">댓글 내용이 여기에 샤랄랄라랄라라라</footer>
-            </div>
-        </div>
-        <div class="card h-50">
-            <div class="card-body">
-                <p class="card-text">작성자명</p>
-                <footer class="blockquote-footer">댓글 내용이 여기에 샤랄랄라랄라라라</footer>
-            </div>
-        </div>
-    </div>
 
-</div>
+    </section>
 
 
 </body>
+
 </html>
