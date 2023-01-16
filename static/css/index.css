@@ -93,3 +93,11 @@ body {
 	padding-right: calc(var(--bs-gutter-x) * .3);
 	padding-left: calc(var(--bs-gutter-x) * .3);
 }
+
+.testBton{
+	border: 1px gray;
+    box-shadow: 3px 3px 1px rgb(77 77 77 / 40%);
+}
+.h-100{
+	bottom: 0;
+}
