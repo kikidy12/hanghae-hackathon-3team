@@ -46,7 +46,6 @@ def modifyBook():
     bookPublisherReceive = request.form['bookPublisherGive']
     bookSummaryReceive = request.form['bookSummaryGive']
 
-
     doc = {
         'bookTitle':bookTitleReceive,
         'bookAuthor':bookAuthorReceive,
