@@ -1,20 +1,10 @@
-<<<<<<< HEAD
-from flask import Flask, render_template, jsonify, session
-from user import *
-=======
+
 from flask import Flask, render_template, jsonify, session, redirect, url_for
->>>>>>> userManagement
 from bookManage import *
 from book import *
 from comment import *
 
-<<<<<<< HEAD
-app = Flask(__name__)
 
-@app.route('/')
-def index():
-  return render_template('index.html')
-=======
 # JWT 토큰을 만들 때 필요한 비밀문자열입니다. 아무거나 입력해도 괜찮습니다.
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 할 수 있습니다.
 SECRET_KEY = 'SPARTA'
