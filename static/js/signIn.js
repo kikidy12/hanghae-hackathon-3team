@@ -1,4 +1,5 @@
 function login() {
+	console.log("sfdsfsdf");
 	if ($("#userPW").val().length > 3 && $("#userID").val().length > 3) {
 		$.ajax({
 			type: "POST",

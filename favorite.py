@@ -7,6 +7,7 @@ def addBookLikePlus():
   bookId = int(request.form['bookId'])
 
   book = db.book.find_one({'id': bookId}, {'_id': False})
-  db.book.update_one({"id":1},{"$set":{"likeCount":int(book['likeCount']) + 1}})
 
-  return jsonify({'message':'좋아요 추가완료'})
+  db.book.update_one({"id":bookId},{"$set":{"likeCount":(int(book['likeCount']) + 1)}})
+
+  return jsonify({'result': 'success', 'message':'좋아요 추가완료'})

@@ -1,8 +1,3 @@
-function saveReply() {
-	let contents = $("#datgul_contents").val();
-	contents;
-	window.location.reload();
-}
 function addLike() {
 	const receivedData = location.href.split("?")[1];
 	$.ajax({
@@ -10,7 +5,11 @@ function addLike() {
 		url: "/api/book/like/plus",
 		data: { bookId: receivedData },
 		success: function (response) {
-			window.location.reload();
+			if (response.result == "success") {
+				alert("추천 성공");
+			} else {
+				alert("추천 실패");
+			}
 		},
 	});
 }
@@ -21,21 +20,24 @@ function addDislike() {
 		url: "/api/book/dislike/plus",
 		data: { bookId: receivedData },
 		success: function (response) {
-			window.location.reload();
+			if (response.result == "success") {
+				alert("비추 성공");
+			} else {
+				alert("비추 실패");
+			}
 		},
 	});
 }
 
 function addComment() {
-	// document.cookie =
-	// 	"mytoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJoYXJyeSIsImV4cCI6MTY3MzkwMTAzOX0.FFk4o-FRdbFkaBvzc2lbpMbLGzPAVP4lrUcg23W_Soc";
+	const receivedData = location.href.split("?")[1];
 
 	let comment = $("#replyInput").val();
 
 	$.ajax({
 		type: "POST",
 		url: "/api/comment",
-		data: { bookId: 1, comment: comment },
+		data: { bookId: receivedData, comment: comment },
 		success: function (response) {
 			window.location.reload();
 		},
@@ -65,6 +67,23 @@ function getBookDetail() {
 				let temp_html = `<li class="list-group-item">${comment.comment}</li>`;
 
 				$("#replyUl").append(temp_html);
+			}
+		},
+	});
+}
+
+function tokenCheck() {
+	$.ajax({
+		type: "GET",
+		url: "/api/valid",
+		data: {},
+		success: function (response) {
+			if (response.result == "success") {
+				$("#loginBtn").css("display", "None");
+				$("#signUpBtn").css("display", "None");
+			} else {
+				$("#loginBtn").css("display", "Bolck");
+				$("#signUpBtn").css("display", "Bolck");
 			}
 		},
 	});

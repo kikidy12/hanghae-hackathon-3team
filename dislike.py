@@ -9,4 +9,4 @@ def addBookDisLikePlus():
   book = db.book.find_one({'id': bookId}, {'_id': False})
   db.book.update_one({"id":bookId},{"$set":{"disLikeCount":int(book['disLikeCount']) + 1}})
 
-  return jsonify({'message':'좋아요 추가완료'})
+  return jsonify({'result': 'success', 'message':'비추 추가완료'})

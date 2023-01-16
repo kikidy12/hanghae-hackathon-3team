@@ -24,6 +24,10 @@ def addComment():
     bookId = int(request.form['bookId']);
     comment = request.form['comment'];
 
+    print(userId)
+    print(bookId)
+    print(comment)
+
     # 커맨트 id순으로 정렬
     commentList = list(db.comment.find({}, {'_id': False}).sort('id'))
 

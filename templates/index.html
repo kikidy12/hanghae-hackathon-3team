@@ -93,7 +93,7 @@
 					<div class="header-list">
 						<!-- 글등록, -->
 						<div>
-							<nav>닉네임</nav>
+							<na id="nickname">닉네임ㅇㅇ</na>
 						</div>
 
 						<!-- 로그인 로그아웃 -->
@@ -103,8 +103,13 @@
 						<!-- 로그인 로그아웃 -->
 
 						<div>
-							<nav onclick="location.href='/login'">로그인 하러가기</nav>
-							<nav onclick="location.href='/register'">회원가입 하러가기</nav>
+							<nav id="loginBtn" onclick="location.href='/login'">
+								로그인 하러가기
+							</nav>
+							<nav id="signUpBtn" onclick="location.href='/register'">
+								회원가입 하러가기
+							</nav>
+							<nav id="signOutBtn" onclick="signOut()">로그아웃</nav>
 						</div>
 					</div>
 				</header>
@@ -128,15 +133,13 @@
 			getBookList();
 		});
 
+		tokenCheck();
+
 		window.addEventListener("click", (e) => {
 			let modalSide = document.querySelector(".modal-side");
 			if (e.target == modalSide) {
-				console.log("맞아요");
-
 				modalSide.classList.remove("show");
 			}
-			console.log(e.target);
-			length;
 		});
 	</script>
 </html>

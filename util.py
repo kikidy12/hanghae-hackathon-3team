@@ -20,7 +20,8 @@ def checkToken():
     try:
         token_receive = request.cookies.get('mytoken')
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        userInfo = db.user.find_one({"userId": int(payload['userId'])})
+
+        userInfo = db.user.find_one({"userId": payload['userId']})
         return userInfo
     # except jwt.ExpiredSignatureError:
     # 토큰 오류시 error발생

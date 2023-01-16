@@ -66,6 +66,8 @@ def apiGetBook():
 def apiPostBookLikePlus():
   message = addBookLikePlus()
   return message
+
+  
 #닉네임 중복체크
 @app.route('/ninkcheck', methods=['POST'])
 def nink_check():
@@ -168,12 +170,13 @@ def apiValid():
         # token을 시크릿키로 디코딩합니다.
         # 보실 수 있도록 payload를 print 해두었습니다. 우리가 로그인 시 넣은 그 payload와 같은 것이 나옵니다.
         payload = jwt.decode(tokenReceive, SECRET_KEY, algorithms=['HS256'])
-        print(payload)
+        
 
         # payload 안에 id가 들어있습니다. 이 id로 유저정보를 찾습니다.
         # 여기에선 그 예로 닉네임을 보내주겠습니다.
-        userinfo = db.user.find_one({'id': payload['id']}, {'_id': 0})
-        return jsonify({'result': 'success', 'nickname': userinfo['nick']})
+        userinfo = db.user.find_one({'userId': payload['userId']}, {'_id': 0})
+
+        return jsonify({'result': 'success', 'nickname': userinfo['userNickName']})
     # except jwt.ExpiredSignatureError:
     #     # 위를 실행했는데 만료시간이 지났으면 에러가 납니다.
     #     return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})

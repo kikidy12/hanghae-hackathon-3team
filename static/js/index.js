@@ -126,3 +126,29 @@ function getBookList() {
 		},
 	});
 }
+
+function tokenCheck() {
+	$.ajax({
+		type: "GET",
+		url: "/api/valid",
+		data: {},
+		success: function (response) {
+			if (response.result == "success") {
+				$("#loginBtn").css("display", "None");
+				$("#signUpBtn").css("display", "None");
+				$("#signOutBtn").css("display", "Bolck");
+				$("#nickname").text(response.nickname);
+			} else {
+				$("#loginBtn").css("display", "Bolck");
+				$("#signUpBtn").css("display", "Bolck");
+				$("#signOutBtn").css("display", "None");
+			}
+		},
+	});
+}
+
+function signOut() {
+	document.cookie = "mytoken=";
+	alert("로그아웃 완료!!");
+	location.reload();
+}
