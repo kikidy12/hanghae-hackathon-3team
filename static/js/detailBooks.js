@@ -34,12 +34,22 @@ function addComment() {
 
 	let comment = $("#replyInput").val();
 
+	if (comment.length <= 0) {
+		alert("댓글 내용을 입력해주세요.");
+		return;
+	}
+
 	$.ajax({
 		type: "POST",
 		url: "/api/comment",
 		data: { bookId: receivedData, comment: comment },
 		success: function (response) {
-			window.location.reload();
+			if (response.result == "success") {
+				window.location.reload();
+			} else {
+				alert("로그인이 필요합니다.");
+				location.href = "/login";
+			}
 		},
 	});
 }
@@ -81,9 +91,14 @@ function tokenCheck() {
 			if (response.result == "success") {
 				$("#loginBtn").css("display", "None");
 				$("#signUpBtn").css("display", "None");
+				$("#replyInput").attr("placeholder", "댓글을 입력해주세요");
 			} else {
 				$("#loginBtn").css("display", "Bolck");
 				$("#signUpBtn").css("display", "Bolck");
+				$("#replyInput").attr(
+					"placeholder",
+					"로그인을 하셔야 댓글을 작성하실 수 있습니다."
+				);
 			}
 		},
 	});
