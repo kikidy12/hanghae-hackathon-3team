@@ -113,3 +113,24 @@
 	margin: 10px auto 10px auto;
 	padding: 10px;
 }
+
+/*세부페이지*/
+#bookTitle{
+    font-family: 'NanumSquareNeoHeavy';
+    margin-top: 60px;
+}
+.detailText_writerinfo p{
+    color: #4b5660;
+    font-family: 'NanumSquareNeoExtraBold';
+}
+#bookSummary{
+    color: #4b5660;
+    font-family: 'NanumSquareNeoBold';
+	font-size: 17px;
+}
+.btn btn-outline-primary{
+    font-family: 'NanumSquareNeoExtraBold';
+}
+.btn btn-outline-danger{
+    font-family: 'NanumSquareNeoExtraBold';
+}
