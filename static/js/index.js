@@ -6,33 +6,36 @@ function modalShow() {
 function addbooklist() {
 	let addbooklist = document.querySelector(".addbooklist");
 	if (
-		$("#booktitle").val().length >= 2 &&
-		$("#author").val().length >= 2 &&
-		$("#bookinfo").val().length >= 2 &&
-		$("#publisher").val().length >= 2 &&
-		$("#bookUrl").val().length >= 2
+		$("#booktitle").val().length < 2 ||
+		$("#author").val().length < 2 ||
+		$("#bookinfo").val().length < 2 ||
+		$("#publisher").val().length < 2 ||
+		$("#bookUrl").val().length < 2
 	) {
-		// 데이터 전송 하기
-		let doc = {
-			bookTitleGive: $("#booktitle").val(),
-			bookAuthorGive: $("#author").val(),
-			bookThumbnailGive: $("#bookUrl").val(),
-			bookPublisherGive: $("#publisher").val(),
-			bookSummaryGive: $("#bookinfo").val(),
-		};
+		alert("입력되지 않은 항목이 있습니다.");
+		return;
+	}
 
-		$.ajax({
-			type: "POST",
-			url: "/api/book/register",
-			data: doc,
-			success: function (response) {
+	// 데이터 전송 하기
+	let doc = {
+		bookTitleGive: $("#booktitle").val(),
+		bookAuthorGive: $("#author").val(),
+		bookThumbnailGive: $("#bookUrl").val(),
+		bookPublisherGive: $("#publisher").val(),
+		bookSummaryGive: $("#bookinfo").val(),
+	};
+
+	$.ajax({
+		type: "POST",
+		url: "/api/book/register",
+		data: doc,
+		success: function (response) {
+			if (response.result == "success") {
 				let modalSide = document.querySelector(".modal-side");
 				modalSide.classList.remove("show");
-			},
-		});
-	} else {
-		alert("다시하셈");
-	}
+			}
+		},
+	});
 }
 
 function login() {
@@ -150,5 +153,5 @@ function tokenCheck() {
 function signOut() {
 	document.cookie = "mytoken=";
 	alert("로그아웃 완료!!");
-	location.reload();
+	window.location.reload();
 }

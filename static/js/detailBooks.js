@@ -74,7 +74,7 @@ function getBookDetail() {
 			for (let i = 0; i < commentList.length; i++) {
 				let comment = commentList[i];
 
-				let temp_html = `<li class="list-group-item">${comment.comment}</li>`;
+				let temp_html = `<li class="list-group-item">${comment.user.userNickName} : ${comment.comment}<button style="float:right" onClick="deleteReply(${comment.id})">삭제</button></li>`;
 
 				$("#replyUl").append(temp_html);
 			}
@@ -99,6 +99,22 @@ function tokenCheck() {
 					"placeholder",
 					"로그인을 하셔야 댓글을 작성하실 수 있습니다."
 				);
+			}
+		},
+	});
+}
+
+function deleteReply(commentId) {
+	$.ajax({
+		type: "DELETE",
+		url: "/api/comment",
+		data: { commentId: commentId },
+		success: function (response) {
+			if (response.result == "success") {
+				alert("삭제 완료");
+				window.location.reload();
+			} else {
+				alert("삭제 실패");
 			}
 		},
 	});

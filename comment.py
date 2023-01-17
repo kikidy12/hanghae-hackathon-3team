@@ -74,12 +74,20 @@ def addSubComment():
 # 댓글 삭제 (삭제시 하위에 달려있는 댓글까지 모두 삭제)
 def deleteComment():
   try:
-    userId = int(request.form['uesrId']);
+    user = checkToken()
+    
+    userId = int(user['userNumber']);
     commentId = int(request.form['commentId']);
 
-    db.comment.delete_one({"id":commentId, 'userId': userId})
-    db.comment.delete({"commentId":commentId})
+    comment = db.comment.find_one({"id":commentId, 'userId': userId}, {'_id': False})
+
+    if comment is None:
+      raise Exception('해당하는 댓글이 없습니다.')
+
+    db.comment.delete_one({"id":int(comment['id'])})
+    db.comment.delete_many({"commentId":commentId})
 
     return jsonify({'result': 'success', 'message': '삭제완료'})
-  except:
+  except Exception as e:
+    print(e)
     return jsonify({'result': 'fail', 'message': '삭제 실패'})

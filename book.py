@@ -8,29 +8,32 @@ def getBook():
   try:
     bookId = int(request.args.get('bookId'))
 
-    bookList = db.book.aggregate([
+    book = db.book.find_one({'id': bookId}, {'_id': False})
+
+    commentList = db.comment.aggregate([
         {
             # sql의 join기능을 수행
             '$lookup': {
-                'from': "comment",
-                'localField': "id",
-                'foreignField': "bookId",
-                'as': "comment",
+                'from': "user",
+                'localField': "userId",
+                'foreignField': "userNumber",
+                'as': "user",
             },
         },
         {
             # 요청한 bookId를 기준삼아 진행한다
-            '$match': {'id': bookId}
+            '$match': {'bookId': bookId}
+        },
+        {
+          '$unwind': {'path':'$user'}
         },
         {
             # 노출시키지 않을 컬럼을 제거시켜준다
-            '$unset': ["_id", 'comment._id']
+            '$unset': ["_id", 'user._id']
         },
     ])
 
-    bookList = list(bookList)
-
-    book = bookList[0] if len(bookList) > 0 else None
+    book['comment'] = list(commentList)
   
     return jsonify({'result': 'success', 'book': book})
 
